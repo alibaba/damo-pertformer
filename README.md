@@ -1,16 +1,16 @@
-# CREformer
+# PertFormer
 
 
 ## Introduction
-This is the official codebase for CREformer: Integrated bulk-single-cell foundation model enables zero-shot prediction of functional perturbations and cell fate dynamics.
+This is the official codebase for PertFormer: Integrated bulk-single-cell foundation model enables zero-shot prediction of functional perturbations and cell fate dynamics.
 
-cis-Regulatory Element Transformer for perturbation study (CREformer) is an LLM-based foundation model for zero-shot predictions of functional perturbations and cell fate dynamics. CREformer has 3 billion parameters and was pretrained on massive bulk and single-cell multiomic data. Typically, without the need of task-specific training, CREformer can realize the predictions of functional regulations, perturbations of genomic elements, genes, and sequences in a zero-shot manner, including the simulation of cell state transitions and disease treatment.
+Perturbation Transformer (PertFormer) is an LLM-based foundation model for zero-shot predictions of functional perturbations and cell fate dynamics. PertFormer has 3 billion parameters and was pretrained on massive bulk and single-cell multiomic data. Typically, without the need of task-specific training, PertFormer can realize the predictions of functional regulations, perturbations of genomic elements, genes, and sequences in a zero-shot manner, including the simulation of cell state transitions and disease treatment.
 
 
 ## Online apps
-https://creformer.ibreed.cn
+https://pertformer.ibreed.cn
 
-This is an online web application to utilize the CREformer model. Here, you can upload your own data and execute most of CREformer's zero-shot predictions through simple, coding-free web applications. This website is free for public registration and use, and we have provided the GPUs for cloud computing resources. Your data will be private and safe in your own account and cannot be seen by others.
+This is an online web application to utilize the PertFormer model. Here, you can upload your own data and execute most of PertFormer's zero-shot predictions through simple, coding-free web applications. This website is free for public registration and use, and we have provided the GPUs for cloud computing resources. Your data will be private and safe in your own account and cannot be seen by others.
 
 
 ## Environment requirements
@@ -26,13 +26,13 @@ This is an online web application to utilize the CREformer model. Here, you can 
 We recommend you to run the codes on NVIDIA A100 GPUs (80G). We do not recommend you to run the codes on a desktop computer.
 
 
-## Pretrained CREformer parameter
+## Pretrained PertFormer parameter
 * Download from Hugging Face:
-  * https://huggingface.co/GenomicIntelligenceDamoAcademy/CREformer
-  * The pretrained CREformer network parameters can be downloaded from the above Hugging Face repo (around 13GB). After downloading all the .pkl files (11 files in total), put them under the "pretrained_models/" path.
+  * https://huggingface.co/GenomicIntelligenceDamoAcademy/pertformer
+  * The pretrained PertFormer network parameters can be downloaded from the above Hugging Face repo (around 13GB). After downloading all the .pkl files (11 files in total), put them under the "pretrained_models/" path.
 
 
-## Extract CREformer Attention Score 
+## Extract PertFormer Attention Score 
 Relevant codes were documented in "codes/example_attention_compute.ipynb". Briefly, you can input the relevant DNA+ATAC information of a specific gene, and the codes will execute the prediction of Attention Scores around this gene.
 
 * Input Data
@@ -41,7 +41,7 @@ Relevant codes were documented in "codes/example_attention_compute.ipynb". Brief
   * Deatiled formatting can be found in the .ipynb file.
 * Default file path
   * The codes will assume the input data to be placed in "data/info_attention.txt".
-  * The codes will load the pretrained CREformer model from "pretrained_models/".
+  * The codes will load the pretrained PertFormer model from "pretrained_models/".
 
 After you have prepared the input data, run the codes cell by cell in the .ipynb file. The codes will print out the output information, which includes the Attention Score for each ATAC peak.
   * Output data format:
@@ -52,7 +52,7 @@ After you have prepared the input data, run the codes cell by cell in the .ipynb
       ... ...
 
 
-## CREformer simulation of perturbations (include Knockout, Knock-in, and etc.)
+## PertFormer simulation of perturbations (include Knockout, Knock-in, and etc.)
 Relevant codes were documented in "codes/example_gexp_compute.ipynb". Briefly, you can input the relevant DNA+ATAC information of a specific gene, and the codes will execute the prediction of its expression level.
 
 **To perform the *in silico* perturbation, you need to provide the DNA+ATAC profiles before (Ref) and after (KO, KI, and etc.) the perturbation respectively in two files.**
@@ -60,12 +60,12 @@ Relevant codes were documented in "codes/example_gexp_compute.ipynb". Briefly, y
 * Input Data format is similar to the previous section, you may refer to the .ipynb file for details.
 * Default file path
   * The codes will assume the input data to be placed in "data/info_ko_org.txt" and "data/info_ko_ko.txt", respectively for the (Ref) and (KO, KI, and etc.) profiles.
-  * The codes will load the pretrained CREformer model from "pretrained_models/".
+  * The codes will load the pretrained PertFormer model from "pretrained_models/".
  
 After you have prepared the input data, run the codes cell by cell in the .ipynb file. The codes will print out the gene expressions before and after the perturbation, and you can check with their difference to model the perturbation.
 
 
-## Citing CREformer
+## Citing PertFormer
 The manuscript is currently under review. You can cite the preprint version of this paper on bioRxiv: https://doi.org/10.1101/2024.12.19.629561
 
 
