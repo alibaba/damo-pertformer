@@ -2,7 +2,7 @@
 
 
 ## Introduction
-This is the official codebase for PertFormer: Integrated bulk-single-cell foundation model enables zero-shot prediction of functional perturbations and cell fate dynamics.
+This is the official codebase for PertFormer: Multimodal foundation model predicts zero-shot functional perturbations and cell fate dynamics.
 
 Perturbation Transformer (PertFormer) is an LLM-based foundation model for zero-shot predictions of functional perturbations and cell fate dynamics. PertFormer has 3 billion parameters and was pretrained on massive bulk and single-cell multiomic data. Typically, without the need of task-specific training, PertFormer can realize the predictions of functional regulations, perturbations of genomic elements, genes, and sequences in a zero-shot manner, including the simulation of cell state transitions and disease treatment.
 
