@@ -26,7 +26,9 @@ This is an online web application to utilize the PertFormer model. Here, you can
 * Install the Python dependencies:
   * `pip install -r requirements.txt`
 
-* Optional: install FlashAttention
+> Note: FlashAttention is optional. PertFormer can run without it. Installation requires `nvcc` and `CUDA_HOME`.
+
+* Optional:
   * `pip install --no-build-isolation flash-attn==2.7.4.post1`
 
 
