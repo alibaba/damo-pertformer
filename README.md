@@ -45,6 +45,10 @@ We have provided multiple tutorials.
   * In this tutorial, we provided a full pipeline to use PertFormer to predict TF knockdown effects.
   * The pipeline includes data processing, motif scanning for KD loci, PertFormer inferences, and evaluations.
   * Deatils can be found in the .ipynb file.
+* Tutorials/TF_overexpression
+  * In this tutorial, we provided a full pipeline to use PertFormer to predict TF over-expression effects.
+  * The pipeline includes data processing, motif scanning for KI loci, PertFormer inferences, and evaluations.
+  * Deatils can be found in the .ipynb file. 
 * Tutorials/EGCS_and_perturbation
   * In this tutorial, we provided general inference codes to extract PertFormer EGCS, and to model perturbation effects.
   * This tutorial provided general information of the model input format and the inference process.
