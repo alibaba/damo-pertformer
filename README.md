@@ -21,7 +21,13 @@ This is an online web application to utilize the PertFormer model. Here, you can
 
 * Create the conda environment:
   * `conda env create -f environment.yml`
-  * `conda activate pertformer`
+  * `conda activate paper-env`
+
+* Install the Python dependencies:
+  * `pip install -r requirements.txt`
+
+* Install FlashAttention separately:
+  * `pip install --no-build-isolation flash-attn==2.7.4.post1`
 
 
 ## Pretrained PertFormer parameter
