@@ -16,8 +16,8 @@ This is an online web application to utilize the PertFormer model. Here, you can
 ## Installation
 
 * Clone the repository:
-  * `git clone https://github.com/<your-org-or-username>/PertFormer.git`
-  * `cd PertFormer`
+  * `git clone https://github.com/alibaba/damo-pertformer.git`
+  * `cd damo-pertformer`
 
 * Create the conda environment:
   * `conda env create -f environment.yml`
