@@ -1,0 +1,12 @@
+accelerate==1.4.0
+dacite==1.9.2
+deepspeed==0.16.7
+einops==0.8.0
+flash-attn==2.7.4.post1
+omegaconf==2.3.0
+regex==2024.11.6
+safetensors==0.5.2
+tokenizers==0.21.0
+torchinfo==1.8.0
+transformers==4.49.0
+pybigwig==0.3.24
