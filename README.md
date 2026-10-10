@@ -26,7 +26,7 @@ This is an online web application to utilize the PertFormer model. Here, you can
 * Install the Python dependencies:
   * `pip install -r requirements.txt`
 
-* Install FlashAttention separately:
+* Optional: install FlashAttention
   * `pip install --no-build-isolation flash-attn==2.7.4.post1`
 
 
