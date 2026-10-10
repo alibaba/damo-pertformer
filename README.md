@@ -38,37 +38,19 @@ This is an online web application to utilize the PertFormer model. Here, you can
   * The pretrained PertFormer network parameters can be downloaded from the above Hugging Face repo (around 13GB). After downloading all the .pkl files (11 files in total), put them under the "pretrained_models/" path.
 
 
-## Extract PertFormer Attention Score 
-Relevant codes were documented in "codes/example_attention_compute.ipynb". Briefly, you can input the relevant DNA+ATAC information of a specific gene, and the codes will execute the prediction of Attention Scores around this gene.
+## Run PertFormer
+We have provided multiple tutorials.
 
-* Input Data
-  * Example data can be found in "data/info_attention.txt".
-  * You need to provide n x 1029-bp DNA sequences and n x 1029-bp ATAC signals, you need to specify the peak that is closest to the TSS, along with the strand of the gene.
-  * Deatiled formatting can be found in the .ipynb file.
-* Default file path
-  * The codes will assume the input data to be placed in "data/info_attention.txt".
-  * The codes will load the pretrained PertFormer model from "pretrained_models/".
-
-After you have prepared the input data, run the codes cell by cell in the .ipynb file. The codes will print out the output information, which includes the Attention Score for each ATAC peak.
-  * Output data format:
-      >chrX_48648355_48648753 <br>
-      Attention score:  0.9368568062782288 <br>
-      >chrX_48652218_48652494 <br>
-      Attention score:  1.2849560976028442 <br>
-      ... ...
-
-
-## PertFormer simulation of perturbations (include Knockout, Knock-in, and etc.)
-Relevant codes were documented in "codes/example_gexp_compute.ipynb". Briefly, you can input the relevant DNA+ATAC information of a specific gene, and the codes will execute the prediction of its expression level.
-
-**To perform the *in silico* perturbation, you need to provide the DNA+ATAC profiles before (Ref) and after (KO, KI, and etc.) the perturbation respectively in two files.**
-
-* Input Data format is similar to the previous section, you may refer to the .ipynb file for details.
-* Default file path
-  * The codes will assume the input data to be placed in "data/info_ko_org.txt" and "data/info_ko_ko.txt", respectively for the (Ref) and (KO, KI, and etc.) profiles.
-  * The codes will load the pretrained PertFormer model from "pretrained_models/".
- 
-After you have prepared the input data, run the codes cell by cell in the .ipynb file. The codes will print out the gene expressions before and after the perturbation, and you can check with their difference to model the perturbation.
+* Tutorials/TF_knockdown
+  * In this tutorial, we provided a full pipeline to use PertFormer to predict TF knockdown effects.
+  * The pipeline includes data processing, motif scanning for KD loci, PertFormer inferences, and evaluations.
+  * Deatils can be found in the .ipynb file.
+* Tutorials/EGCS_and_perturbation
+  * In this tutorial, we provided general inference codes to extract PertFormer EGCS, and to model perturbation effects.
+  * This tutorial provided general information of the model input format and the inference process.
+  * Deatils can be found in the .ipynb file.
+* Tutorials/single-cell-bigwig
+  * In this session, you can find data processing codes to generate .bigwig signals for single-cell ATAC data.
 
 
 ## Citing PertFormer
