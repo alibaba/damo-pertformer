@@ -13,17 +13,15 @@ https://pertformer.ibreed.cn
 This is an online web application to utilize the PertFormer model. Here, you can upload your own data and execute most of PertFormer's zero-shot predictions through simple, coding-free web applications. This website is free for public registration and use, and we have provided the GPUs for cloud computing resources. Your data will be private and safe in your own account and cannot be seen by others.
 
 
-## Environment requirements
-* PyTorch 2.0.1 (cuda 11.7)
-  * pip install torch==2.0.1 --index-url https://download.pytorch.org/whl/cu117
-* numpy 1.21.5
-  * pip install numpy==1.21.5
-* einops 0.7.0
-  * pip install einops==0.7.0
-* pandas 1.4.4
-  * pip install pandas==1.4.4
+## Installation
 
-We recommend you to run the codes on NVIDIA A100 GPUs (80G). We do not recommend you to run the codes on a desktop computer.
+* Clone the repository:
+  * `git clone https://github.com/<your-org-or-username>/PertFormer.git`
+  * `cd PertFormer`
+
+* Create the conda environment:
+  * `conda env create -f environment.yml`
+  * `conda activate pertformer`
 
 
 ## Pretrained PertFormer parameter
