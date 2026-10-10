@@ -21,7 +21,7 @@ This is an online web application to utilize the PertFormer model. Here, you can
 
 * Create the conda environment:
   * `conda env create -f environment.yml`
-  * `conda activate paper-env`
+  * `conda activate pertformer`
 
 * Install the Python dependencies:
   * `pip install -r requirements.txt`
