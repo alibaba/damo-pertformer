@@ -53,8 +53,6 @@ We have provided multiple tutorials.
   * In this tutorial, we provided general inference codes to extract PertFormer EGCS, and to model perturbation effects.
   * This tutorial provided general information of the model input format and the inference process.
   * Deatils can be found in the .ipynb file.
-* Tutorials/single-cell-bigwig
-  * In this session, you can find data processing codes to generate .bigwig signals for single-cell ATAC data.
 
 
 ## Citing PertFormer
