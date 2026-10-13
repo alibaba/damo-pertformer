@@ -59,7 +59,15 @@ We have provided multiple tutorials.
 The manuscript is currently under review. You can cite the preprint version of this paper on bioRxiv: https://doi.org/10.1101/2024.12.19.629561
 
 
-## Correspondence
-Fei Gu (gufei.gf@alibaba-inc.com), Damo Academy, Alibaba Group.
+## Contact
 
-Zikun Yang (yangzikun.yzk@alibaba-inc.com), Damo Academy, Alibaba Group.
+For code, implementation, and GitHub-related questions, please contact:
+
+- **Zikun Yang** (yangzikun.yzk@alibaba-inc.com)
+
+For scientific questions and manuscript-related correspondence, please contact the paper's corresponding authors:
+
+- **Zikun Yang** (yangzikun.yzk@alibaba-inc.com)
+- **Lan Jiang** (jiangl@cncb.ac.cn)
+- **Xiaodong Liu** (liuxiaodong@westlake.edu.cn)
+- **Fei Gu** (gufei.gf@alibaba-inc.com)
