@@ -61,11 +61,11 @@ The manuscript is currently under review. You can cite the preprint version of t
 
 ## Contact
 
-For code, implementation, and GitHub-related questions, please contact:
+For questions regarding the codebase, implementation, and GitHub issues, please contact:
 
-- **Zikun Yang** (yangzikun.yzk@alibaba-inc.com)
+- **Zikun Yang** (yangzikun.yzk@alibaba-inc.com), DAMO Academy, Alibaba Group
 
-For scientific questions and manuscript-related correspondence, please contact the paper's corresponding authors:
+For questions regarding the manuscript and scientific correspondence, please contact the corresponding authors of the paper:
 
 - **Zikun Yang** (yangzikun.yzk@alibaba-inc.com)
 - **Lan Jiang** (jiangl@cncb.ac.cn)
