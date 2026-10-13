@@ -50,7 +50,10 @@ def load_deg_csv_rows(csv_path: str) -> List[dict]:
 
 
 def split_tf_combo(tf_name: str) -> List[str]:
-    return [x.strip() for x in tf_name.split("+") if x.strip()]
+    tf_name = str(tf_name).strip()
+    if not tf_name:
+        return []
+    return [tf_name]
 
 
 def sample_gene_rows(rows: List[dict], max_samples: Optional[int] = None, random_seed: int = 42) -> List[dict]:
@@ -780,6 +783,8 @@ class TFKIPeakInserterFixedSignal:
                 "status": "empty_tf_name"
             }
 
+        single_tf = tf_list[0]
+
         entries = self._load_wt_entries(gene_name)
         if entries is None:
             return False, {
@@ -841,21 +846,16 @@ class TFKIPeakInserterFixedSignal:
                 "donor_width": donor_width
             }
 
-        per_tf_scan_results = []
+        ok, tf_scan_meta = self._select_best_hits_for_single_tf(
+            tf_name=single_tf,
+            segments=segments
+        )
+
+        per_tf_scan_results = [tf_scan_meta]
         raw_selected_centers = []
         raw_selected_hits = []
 
-        for single_tf in tf_list:
-            ok, tf_scan_meta = self._select_best_hits_for_single_tf(
-                tf_name=single_tf,
-                segments=segments
-            )
-
-            per_tf_scan_results.append(tf_scan_meta)
-
-            if not ok:
-                continue
-
+        if ok:
             best_hits = tf_scan_meta.get("best_hits", [])
             for hit in best_hits:
                 center_1based = hit["genomic_center_1based"]
@@ -876,7 +876,7 @@ class TFKIPeakInserterFixedSignal:
             return False, {
                 "gene_name": gene_name,
                 "tf_name": tf_name,
-                "status": "all_tfs_no_hit_under_threshold",
+                "status": "no_hit_under_threshold",
                 "motif_pvalue_threshold": self.motif_pvalue_thresh,
                 "per_tf_scan_results": per_tf_scan_results
             }
@@ -939,18 +939,12 @@ class TFKIPeakInserterFixedSignal:
                     linked_hits.append(h)
 
             if len(linked_hits) == 0:
-                absorb_hits = []
-                for h in raw_selected_hits:
-                    if abs(h["genomic_center_1based"] - center_1based) < donor_width:
-                        absorb_hits.append(h)
-                linked_hits = absorb_hits
+                linked_hits = [
+                    h for h in raw_selected_hits
+                    if abs(h["genomic_center_1based"] - center_1based) < donor_width
+                ]
 
-            source_tfs = sorted(list(set([
-                h["source_tf"] for h in linked_hits
-                if h.get("source_tf") is not None
-            ])))
-            source_tf_name = "+".join(source_tfs) if len(source_tfs) > 0 else tf_name
-
+            source_tf_name = single_tf
             header = f">KI_{chrom}_{new_start}_{new_end}_tf_{source_tf_name}"
 
             ki_records.append({
@@ -990,7 +984,7 @@ class TFKIPeakInserterFixedSignal:
         meta = {
             "gene_name": gene_name,
             "tf_name": tf_name,
-            "tf_list": tf_list,
+            "tf_list": [single_tf],
             "status": "success",
             "output_path": out_path,
             "strand": strand,
@@ -1033,6 +1027,7 @@ class TFKIPeakInserterFixedSignal:
         }
 
         return True, meta
+
 
     def batch_build_for_gene_rows(
         self,
